@@ -48,7 +48,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
         public PersonViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            personName = (TextView) itemView.findViewById(R.id.item_Id);
+            personName = (TextView) itemView.findViewById(R.id.task_id);
 
         }
     }

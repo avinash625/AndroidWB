@@ -1,6 +1,7 @@
 package com.avinashbondalapatigmail.recyclerviewone;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,13 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -30,7 +38,28 @@ public class EnterTaskDetails extends AppCompatActivity {
                 TextView taskDesc = (TextView) findViewById(R.id.task_desc);
                 String taskDescValue = (String) taskDesc.getText().toString();
 
-                Toast.makeText(getApplicationContext(),taskNameValue,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),taskNameValue,Toast.LENGTH_LONG).show();
+                try{
+                    SaveTask(taskNameValue, taskDescValue);
+                }catch (FileNotFoundException f){
+                    f.printStackTrace();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+
+            }
+
+            private void SaveTask(String taskNameValue, String taskDescValue) throws FileNotFoundException, IOException {
+                File file = new File(getFilesDir(),"testfile1.txt");
+                FileOutputStream fileOutputStream = new FileOutputStream(file, true);
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+                BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+                bufferedWriter.write(new String(taskNameValue+"$"+taskDescValue + "\n"));
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStreamWriter.close();
+                fileOutputStream.close();
+                finish();
             }
         });
     }

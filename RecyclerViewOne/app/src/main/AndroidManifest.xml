@@ -25,11 +25,6 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".CreateTaskActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_create_task"
-            android:theme="@style/FullscreenTheme" />
-        <activity
             android:name=".EnterTaskDetails"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_enter_task_details"

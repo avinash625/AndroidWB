@@ -1,7 +1,8 @@
+package com.avinashbondalapatigmail.recyclerviewone;
+
 import java.io.Serializable;
 
 public class Task implements Serializable {
-
     String taskName;
     String taskDesc;
 
