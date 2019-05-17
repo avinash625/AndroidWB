@@ -17,7 +17,10 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase getDatabase(Context context){
         if(INSTANCE == null){
-            INSTANCE  = Room.databaseBuilder(context.getApplicationContext(),AppDatabase.class,"taskDB").addCallback(callback).build();
+            INSTANCE  = Room.databaseBuilder(context.getApplicationContext(),AppDatabase.class,"taskDB")
+                    //uncomment this if you want a clean app after every open.
+                    //.addCallback(callback)
+                    .build();
         }
         return INSTANCE;
     }
