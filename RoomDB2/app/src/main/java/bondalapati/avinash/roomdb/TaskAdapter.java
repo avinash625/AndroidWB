@@ -31,7 +31,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
     @Override
     public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
         if(allTasks != null){
-            Task current = allTasks.get(position);
             holder.taskName.setText(allTasks.get(position).getTaskName());
             holder.taskDesc.setText(allTasks.get(position).getTaskDesc());
         }
@@ -57,8 +56,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskHolder> {
         public TaskHolder(@NonNull View itemView) {
             super(itemView);
 
-            taskName = itemView.findViewById(R.id.taskDescValue);
-            taskDesc = itemView.findViewById(R.id.taskNameValue);
+            taskName = itemView.findViewById(R.id.taskNameValue);
+            taskDesc = itemView.findViewById(R.id.taskDescValue);
         }
 
 

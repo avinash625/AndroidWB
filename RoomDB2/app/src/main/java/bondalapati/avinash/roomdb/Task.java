@@ -26,9 +26,9 @@ public class Task {
     @ColumnInfo(name = "taskdesc")
     private String taskDesc;
 
-    public Task(String taskName, String taskDesc){
-        this.taskDesc = taskDesc;
+    Task(String taskName, String taskDesc){
         this.taskName = taskName;
+        this.taskDesc = taskDesc;
     }
 
     public String getTaskName() {

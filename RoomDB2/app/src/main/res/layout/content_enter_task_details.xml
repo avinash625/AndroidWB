@@ -10,10 +10,10 @@
 
     <EditText
         android:id="@+id/enterTaskNameValue"
-        android:layout_width="422dp"
-        android:layout_height="197dp"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
         android:ems="10"
-        android:gravity="top"
+        android:gravity="center_vertical"
         android:hint="@string/hint_enter_task_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +23,10 @@
 
     <EditText
         android:id="@+id/enterTaskDescValue"
-        android:layout_width="406dp"
-        android:layout_height="235dp"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
         android:ems="10"
+        android:gravity="center_vertical"
         android:hint="@string/hint_enter_task_desc"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
