@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">RoomDB</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_enter_task_details">Enter Details</string>
+    <string name="hint_enter_task_name">Enter Task Name</string>
+    <string name="hint_enter_task_desc">Enter Task Description</string>
+    <string name="button_save_task">Save Task</string>
+
 </resources>

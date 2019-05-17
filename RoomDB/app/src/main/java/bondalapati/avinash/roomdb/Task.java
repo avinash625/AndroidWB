@@ -5,11 +5,19 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity
+@Entity(tableName = "task")
 public class Task {
     @PrimaryKey
     @NonNull
     int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Task(String TaskName){
         this.TaskName = TaskName;

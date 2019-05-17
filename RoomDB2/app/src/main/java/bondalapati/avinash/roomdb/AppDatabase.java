@@ -40,8 +40,8 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Task... tasks) {
             taskDao.deleteAllTasks();
-            taskDao.insertTask(new Task("taskOne","taskDesc1"));
-            taskDao.insertTask(new Task("taskTwo","taskDesc2"));
+//            taskDao.insertTask(new Task("taskOne","taskDesc1"));
+//            taskDao.insertTask(new Task("taskTwo","taskDesc2"));
             return null;
         }
     }
