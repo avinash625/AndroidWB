@@ -3,8 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="bondalapati.avinash.roomwordsample.MainActivity">
     <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_deleteall"
+        android:orderInCategory="200"
+        android:title="DeleteAll"
+        app:showAsAction="never"
+        />
 </menu>
