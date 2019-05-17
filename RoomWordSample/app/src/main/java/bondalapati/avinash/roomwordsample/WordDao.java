@@ -21,4 +21,7 @@ public interface WordDao {
 
     @Query("SELECT * FROM word_table")
     LiveData<List<Word>> getAllWords();
+
+    @Query("SELECT * FROM word_table where word = :st")
+    LiveData<List<Word>> getRelatedWords(String st);
 }

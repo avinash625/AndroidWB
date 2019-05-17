@@ -10,6 +10,7 @@ import java.util.List;
 public class WordRepository {
     private WordDao mWordDao;
     private LiveData<List<Word>> mAllWords;
+    private LiveData<List<Word>> mRelatedWords;
 
     WordRepository(Application application){
         WordRoomDatabase db = WordRoomDatabase.getDatabase(application);
