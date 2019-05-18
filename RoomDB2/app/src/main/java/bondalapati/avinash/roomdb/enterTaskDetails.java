@@ -1,5 +1,6 @@
 package bondalapati.avinash.roomdb;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,8 +30,14 @@ public class enterTaskDetails extends AppCompatActivity {
             public void onClick(View v) {
                 TextView taskName = (TextView) findViewById(R.id.enterTaskNameValue);
                 TextView taskDesc = (TextView) findViewById(R.id.enterTaskDescValue);
-                TaskViewModel taskViewModel = ViewModelProviders.of(enterTaskDetails.this).get(TaskViewModel.class);
-                taskViewModel.insertTask(new Task(taskName.getText().toString(),taskDesc.getText().toString()));
+                Intent replyIntent = new Intent();
+                if(taskName.getText().length() ==0 || taskDesc.getText().length() == 0){
+                   setResult(RESULT_CANCELED, replyIntent);
+                }else{
+                    TaskViewModel taskViewModel = ViewModelProviders.of(enterTaskDetails.this).get(TaskViewModel.class);
+                    taskViewModel.insertTask(new Task(taskName.getText().toString(),taskDesc.getText().toString()));
+                    setResult(RESULT_OK,replyIntent);
+                }
                 finish();
             }
         });

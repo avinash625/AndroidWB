@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
@@ -16,12 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private TaskViewModel taskViewModel;
+    private final int NEW_VALUE_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +36,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-
              Intent intent = new Intent(MainActivity.this,enterTaskDetails.class);
-             startActivity(intent);
+             startActivityForResult(intent,NEW_VALUE_REQUEST);
             }
         });
 
@@ -78,5 +78,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == NEW_VALUE_REQUEST && resultCode == RESULT_OK){
+            Toast.makeText(getApplicationContext(),"Value added successfully", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getApplicationContext(),"Invalid name/value", Toast.LENGTH_LONG).show();
+        }
     }
 }
