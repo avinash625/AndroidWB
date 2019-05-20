@@ -5,33 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".enterTaskDetails"
-    tools:showIn="@layout/activity_enter_task_details">
+    tools:context=".enterTaskDetails">
 
     <EditText
-        android:id="@+id/enterTaskNameValue"
-        android:layout_width="0dp"
+        android:id="@+id/editTaskNameValue"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="center_vertical"
         android:hint="@string/hint_enter_task_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/enterTaskDescValue"
-        android:layout_width="0dp"
+        android:id="@+id/editTaskDescValue"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:ems="10"
         android:gravity="center_vertical"
         android:hint="@string/hint_enter_task_desc"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterTaskNameValue" />
+        app:layout_constraintTop_toBottomOf="@+id/editTaskNameValue" />
 
     <Button
         android:id="@+id/editTask"

@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ViewTaskDetails"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/ItemInformation"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="bondalapati.avinash.roomdb.MainActivity" />
+        </activity>
+        <activity
             android:name=".enterTaskDetails"
             android:label="@string/title_activity_enter_task_details"
             android:parentActivityName=".MainActivity"
@@ -18,6 +28,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="bondalapati.avinash.roomdb.MainActivity" />
         </activity>
+        <activity android:name=".EditTaskDetails"
+                 android:label="@string/editTaskValue"
+            android:parentActivityName=".ViewTaskDetails"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

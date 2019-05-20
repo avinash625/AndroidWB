@@ -12,6 +12,10 @@ public class Task {
     @NonNull
     private int id;
 
+    public Task() {
+
+    }
+
     public int getId() {
         return id;
     }

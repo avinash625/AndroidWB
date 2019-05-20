@@ -6,4 +6,10 @@
     <string name="hint_enter_task_desc">Enter Description</string>
     <string name="button_save_task">Save</string>
 
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="editTaskValue">Edit</string>
+    <string name="deleteTask">Delete</string>
+    <string name="ItemInformation">Information</string>
+
 </resources>

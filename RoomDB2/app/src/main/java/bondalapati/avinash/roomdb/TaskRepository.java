@@ -23,8 +23,10 @@ public class TaskRepository {
     }
 
     public void deleteTask(Task task){
-        new deleteTaskAsync(taskDao).execute();
+        new deleteTaskAsync(taskDao).execute(task);
     }
+
+    public void updateTask(Task task){ new updateTaskAsync(taskDao).execute(task);}
 
     public LiveData<List<Task>> getAllWords(){
         return taskDao.getAllTasks();
@@ -40,6 +42,20 @@ public class TaskRepository {
         @Override
         protected Void doInBackground(Task... tasks) {
             taskDao.insertTask(tasks[0]);
+            return null;
+        }
+    }
+
+    private class updateTaskAsync extends AsyncTask<Task, Void, Void>{
+
+        private TaskDao taskDao;
+
+        updateTaskAsync(TaskDao taskDao){
+            this.taskDao = taskDao;
+        }
+        @Override
+        protected Void doInBackground(Task... tasks) {
+            taskDao.updateTask(tasks[0]);
             return null;
         }
     }
